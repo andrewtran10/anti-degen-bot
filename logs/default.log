@@ -1,0 +1,5 @@
+{"level":"info","message":"12:function getMinutes() { [native code] } - 6:1:2023 | Info: Error: ENOENT: no such file or directory, scandir 'C:\\Storage\\Projects\\anti-degen-bot\\events'"}
+{"level":"info","message":"12:function getMinutes() { [native code] } - 6:1:2023 | Info: Unable to load Command: lock, Reason: File doesn't had run/name/desciption"}
+{"level":"info","message":"12:function getMinutes() { [native code] } - 6:1:2023 | Info: Unable to load Command: user, Reason: File doesn't had run/name/desciption"}
+{"level":"info","message":"12:function getMinutes() { [native code] } - 6:1:2023 | Info: Unable to load Command: lock, Reason: File doesn't had run/name/desciption"}
+{"level":"info","message":"12:function getMinutes() { [native code] } - 6:1:2023 | Info: Unable to load Command: user, Reason: File doesn't had run/name/desciption"}
