@@ -2,7 +2,7 @@
 import * as colors from "colors";
 import {createLogger, transports, Logger} from "winston";
 
-class BotLogger {
+export class BotLogger {
 
   logger: Logger;
 
@@ -28,5 +28,3 @@ class BotLogger {
     );
   }
 }
-
-module.exports = BotLogger;
