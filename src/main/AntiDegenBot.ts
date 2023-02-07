@@ -1,5 +1,6 @@
 import { PingCommand } from "../discord/commands/ping";
 import { InteractionCreateListener } from "../discord/listeners/InteractionCreateListener";
+import { ReadyListener } from "../discord/listeners/ReadyListener";
 import { DiscordEventListener } from "../discord/DiscordEventListener";
 import { DiscordCommand } from "../discord/DiscordCommand";
 
@@ -14,18 +15,21 @@ export class AntiDegenBot extends Client {
 
     constructor() {
         super({intents: [GatewayIntentBits.Guilds]});
-
-        this.token = (process.env.DISCORD_TOKEN) ? process.env.DISCORD_TOKEN : null;
         this.commands = new Map<string, DiscordCommand>();
         this.logger = new BotLogger(path.join(__dirname, "../logs/", "default.log"))
 
         this.registerListener(new InteractionCreateListener());
+        this.registerListener(new ReadyListener());
         this.registerCommand(new PingCommand());
 
     }
 
     init() {
-        if (this.token) this.login(this.token);
+        if (this.token) {
+            this.login(this.token);
+            console.log('nice');
+        }
+        
     }
 
 
