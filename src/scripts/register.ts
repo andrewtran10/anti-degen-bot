@@ -2,8 +2,8 @@ const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
 const path = require('path');
 
-const clientId = 1071976832783634462;
-const guildId = 1071979009287651423;
+const clientId = '1071976832783634462';
+const guildId = '1071979009287651423';
 const token = process.env.DISCORD_TOKEN;
 
 const commands = [];
