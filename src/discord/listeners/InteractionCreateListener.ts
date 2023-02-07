@@ -7,8 +7,8 @@ import { Events } from "discord.js";
 
 export class InteractionCreateListener extends DiscordEventListener {
     registerListener(antiDegenbot: AntiDegenBot) : void {
-        antiDegenbot.ws.on(Events.InteractionCreate as never, async (interaction: CommandInteraction) => {
-            if (interaction.isChatInputCommand()) return;
+        antiDegenbot.on(Events.InteractionCreate as never, async (interaction: any) => {
+            if (!interaction.isChatInputCommand()) return;
             
             let command = antiDegenbot.commands.get(interaction.commandName);
             
