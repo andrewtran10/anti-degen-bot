@@ -1,6 +1,5 @@
 {
   "main": "index.js",
-  "type": "module",
   "dependencies": {
     "@types/winston": "^2.4.4",
     "colors": "^1.4.0",

@@ -15,9 +15,7 @@ export class AntiDegenBot extends Client {
     constructor() {
         super({intents: [GatewayIntentBits.Guilds]});
 
-        let token = process.env.DISCORD_TOKEN;
-        this.token = (token) ? token : null;
-
+        this.token = (process.env.DISCORD_TOKEN) ? process.env.DISCORD_TOKEN : null;
         this.commands = new Map<string, DiscordCommand>();
         this.logger = new BotLogger(path.join(__dirname, "../logs/", "default.log"))
 

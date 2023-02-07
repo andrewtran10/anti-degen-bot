@@ -5,3 +5,5 @@ dotenv.config();
 const client : AntiDegenBot = new AntiDegenBot();
 
 client.init();
+
+module.exports = client;
