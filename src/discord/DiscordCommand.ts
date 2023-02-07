@@ -1,10 +1,10 @@
 import { ChatInputCommandInteraction, CommandInteraction, SlashCommandBuilder } from "discord.js";
 
 export abstract class DiscordCommand {
-    builder: SlashCommandBuilder;
+    data: SlashCommandBuilder;
 
     constructor(props: SlashCommandBuilder) {
-        this.builder = props;
+        this.data = props;
     }
 
     abstract execute(interaction: CommandInteraction) : Promise <void>;
