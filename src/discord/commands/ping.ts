@@ -1,14 +1,14 @@
-import { ChatInputCommandInteraction, CommandInteraction, SlashCommandBuilder } from "discord.js";
+import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 import { DiscordCommand } from "../DiscordCommand";
 
 
-export class PingCommand extends DiscordCommand {
+export default new class PingCommand extends DiscordCommand {
 	constructor() {
-		let builder = new SlashCommandBuilder()
+		let data = new SlashCommandBuilder()
 			.setName('ping')
 			.setDescription('Ping Pong!');
 
-		super(builder);
+		super(data);
 	};
 
 	async execute(interaction: CommandInteraction) : Promise <void> {
