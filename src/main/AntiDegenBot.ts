@@ -1,4 +1,6 @@
-import { PingCommand } from "../discord/commands/ping";
+import ping from "../discord/commands/ping";
+import user from "../discord/commands/user";
+
 import { InteractionCreateListener } from "../discord/listeners/InteractionCreateListener";
 import { ReadyListener } from "../discord/listeners/ReadyListener";
 import { DiscordEventListener } from "../discord/DiscordEventListener";
@@ -20,16 +22,12 @@ export class AntiDegenBot extends Client {
 
         this.registerListener(new InteractionCreateListener());
         this.registerListener(new ReadyListener());
-        this.registerCommand(new PingCommand());
-
+        this.registerCommand(ping);
+        this.registerCommand(user);
     }
 
     init() {
-        if (this.token) {
-            this.login(this.token);
-            console.log('nice');
-        }
-        
+        if (this.token) this.login(this.token);
     }
 
 
@@ -38,7 +36,7 @@ export class AntiDegenBot extends Client {
     }
 
     registerCommand(discordCommand: DiscordCommand) {
-        this.commands.set(discordCommand.builder.name, discordCommand);
+        this.commands.set(discordCommand.data.name, discordCommand);
     }
 
 }
